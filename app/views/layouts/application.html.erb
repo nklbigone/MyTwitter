@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div id="header">
+    <%= image_tag("twitter.png") %>
+    <h1>Twitter Profile</h1>
+  </div>
+  <div id="container">
+    <div id="top_page">
+      <%= yield %>
+    </div>
+  </div>
+
+  <div id="footer">
+    <p>copyright all rights reserved!!</p>
+  </div>
+  </body>
+</html>

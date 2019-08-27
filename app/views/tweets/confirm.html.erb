@@ -1,0 +1,13 @@
+<h3>Do you want to tweet with this content?</h3>
+
+<%= form_with(model: @tweet, url: tweets_path, local: true) do |form| %>
+    <%= form.hidden_field :content %>
+
+    <p>Body:<%= @tweet.content %></p>
+  <%= form.submit  "Confirm" %>
+<% end %>
+
+<%= form_with(model: @tweet, url: new_tweet_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "back", name: 'back' %>
+<% end %>
