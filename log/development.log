@@ -554,3 +554,34 @@ Processing by TweetsController#index as HTML
 Completed 200 OK in 64ms (Views: 56.6ms | ActiveRecord: 5.1ms)
 
 
+Started GET "/tweets" for ::1 at 2019-08-30 16:01:41 +0200
+  [1m[35m (36.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alexis/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by TweetsController#index as HTML
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTweet Load (21.0ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/views/tweets/index.html.erb:7
+  Rendered tweets/index.html.erb within layouts/application (77.2ms)
+Completed 200 OK in 921ms (Views: 862.4ms | ActiveRecord: 30.9ms)
+
+
+Started GET "/tweets/1/edit" for ::1 at 2019-08-30 16:02:04 +0200
+Processing by TweetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTweet Load (1.0ms)[0m  [1m[34mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tweets_controller.rb:75
+  Rendering tweets/edit.html.erb within layouts/application
+  Rendered tweets/_form.html.erb (156.2ms)
+  Rendered tweets/edit.html.erb within layouts/application (159.3ms)
+Completed 200 OK in 247ms (Views: 202.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tweets" for ::1 at 2019-08-30 16:02:07 +0200
+Processing by TweetsController#index as HTML
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTweet Load (0.7ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/views/tweets/index.html.erb:7
+  Rendered tweets/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 75ms (Views: 72.6ms | ActiveRecord: 0.7ms)
+
+
